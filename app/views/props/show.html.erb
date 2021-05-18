@@ -1,0 +1,14 @@
+<h1>SHOW - Votre objet</h1>
+<p><%= @prop.name %></p>
+<p><%= @prop.movie.name %></p>
+<p><%= @prop.category %></p>
+<p><%= @prop.description %></p>
+<p><%= @prop.price %></p>
+
+<%= simple_form_for [ @prop, @booking] do |f| %>
+  <%= f.input :date %>
+  <%= f.submit "Book this object", class: "btn btn-primary" %>
+<% end %>
+
+
+<!-- <p><%= @prop.availability %></p> -->
