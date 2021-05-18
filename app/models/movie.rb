@@ -1,3 +1,3 @@
 class Movie < ApplicationRecord
-  has_many :props
+  has_many :props, dependent: :destroy
 end
