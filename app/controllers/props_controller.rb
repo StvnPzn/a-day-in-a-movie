@@ -1,6 +1,10 @@
 class PropsController < ApplicationController
   def index
-    @props = Prop.all
+    if params[:query].present?
+      @props = Prop.joins(:movie).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @props = Prop.all
+    end
   end
 
   def show
@@ -33,8 +37,17 @@ class PropsController < ApplicationController
   end
 
   private
+
   def prop_params
     params.require(:prop).permit(:name, :category, :availability, :description, :price)
   end
 
+  def sql_query
+    " \
+    props.name ILIKE :query \
+    OR props.description ILIKE :query \
+    OR props.category ILIKE :query \
+    OR movies.name ILIKE :query \
+    "
+  end
 end

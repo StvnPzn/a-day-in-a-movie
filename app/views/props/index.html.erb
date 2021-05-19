@@ -1,7 +1,11 @@
-<form class="form-inline">
-  <input class="form-control mr-2" type="search" placeholder="Exemple : star wars" aria-label="Search">
-  <button class="btn btn-outline-dark my-2" type="submit">Search</button>
-</form>
+<%= form_tag props_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a prop"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
 <div class="container">
 <h1>Choisissez votre accessoire !</h1>
