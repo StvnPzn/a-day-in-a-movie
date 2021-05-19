@@ -6,10 +6,8 @@
   </div>
 </div>
 
-<div class="banner-objects">
-<h2>Découvrez les objets à louer</h2>
-
 <div class="container">
+<h1>Découvrez les objets à louer</h1>
   <div class="props-list">
     <div class="row">
       <% @props.each do |prop| %>
@@ -22,12 +20,13 @@
               <div class="prop-card-details">
                 <p><i class="fas fa-film"></i> <%= prop.movie.name %></p>
                 <p class="price"><%= prop.price %> <i class="fas fa-euro-sign"></i></p>
-                <button type="button" class="btn btn-outline-danger btn-sm">Louer</button>
+                <%= link_to "Louer", prop_path(prop), :class => "btn btn-outline-danger btn-sm" %>
               </div>
             </div>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
