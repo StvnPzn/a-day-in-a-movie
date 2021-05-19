@@ -17,7 +17,7 @@
               <div class="prop-card-details">
                 <p><i class="fas fa-film"></i> <%= prop.movie.name %></p>
                 <p class="price"><%= prop.price %> <i class="fas fa-euro-sign"></i></p>
-                <button type="button" class="btn btn-outline-danger btn-sm">Louer</button>
+                <%= link_to "Louer", prop_path(prop), :class => "btn btn-outline-danger btn-sm" %>
               </div>
             </div>
         </div>

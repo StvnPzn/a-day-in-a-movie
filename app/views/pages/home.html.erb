@@ -8,4 +8,25 @@
 
 <div class="banner-objects">
 <h2>Découvrez les objets à louer</h2>
+
+<div class="container">
+  <div class="props-list">
+    <div class="row">
+      <% @props.each do |prop| %>
+      <div class="col-4">
+        <div class="prop-card">
+          <img src="https://source.unsplash.com/random" alt="illustration">
+            <div class="prop-card-info">
+              <h2><%= prop.name %></h2>
+              <p><%= prop.description %></p>
+              <div class="prop-card-details">
+                <p><i class="fas fa-film"></i> <%= prop.movie.name %></p>
+                <p class="price"><%= prop.price %> <i class="fas fa-euro-sign"></i></p>
+                <button type="button" class="btn btn-outline-danger btn-sm">Louer</button>
+              </div>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
