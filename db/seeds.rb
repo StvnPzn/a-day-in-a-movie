@@ -8,11 +8,14 @@
 Movie.destroy_all
 Prop.destroy_all
 User.destroy_all
+Booking.destroy_all
 
+puts 'users'
 user1 = User.create!(email: "flo@go.com", password: "azerty")
 user2 = User.create!(email: "lisa@go.com", password: "azerty")
 user3 = User.create!(email: "steven@go.com", password: "azerty")
 
+puts 'movies'
 star_wars = Movie.create(name: "Star Wars")
 got = Movie.create(name: "Game of thrones")
 shinning = Movie.create(name: "The Shinning")
@@ -38,7 +41,7 @@ cinquieme_element = Movie.create(name: "Le Cinquieme élément")
 jurassik_park = Movie.create(name: "Jurassik Park")
 james_bond = Movie.create(name: "James Bond")
 
-
+puts 'objects'
 sabre_laser = Prop.create!(name: "Sabre Laser", movie: star_wars, user: user1)
 dark_vador = Prop.create(name: "Dark Vador costume", movie: star_wars, user: user1)
 helmet_stormtrooper = Prop.create(name: "Stormtrooper Helmet", movie: star_wars, user: user1)
@@ -102,4 +105,3 @@ chapeau_indiana = Prop.create(name: 'Chapeau d\'Indiana Jones', movie: indiana_j
 lasso_indiana = Prop.create(name: 'Lasso d\'Indiana Jones', movie: indiana_jones, user: user3)
 skull_indiana = Prop.create(name: 'Crâne de Cristal', movie: indiana_jones, user: user3)
 moto_indiana = Prop.create(name: 'Moto d\'Indiana Jones', movie: indiana_jones, user: user3)
-
