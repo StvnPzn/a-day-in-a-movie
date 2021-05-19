@@ -1,1 +1,45 @@
-// Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('image2.jpg');
+  background-size: cover;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #E63946;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #12190F;
+  color: white;
+}
+
+.header-container {
+  margin-left: 35px;
+}
+
+.banner-objects h2 {
+  font-size: 24px;
+  margin-left: 35px;
+  margin-top: 16px;
+}
