@@ -1,5 +1,23 @@
-<h1>INDEX</h1>
-<% @props.each do |prop| %>
-<p> <%=prop.name %> - <%= prop.movie.name %></p>
-<% end %>
-
+<div class="container">
+<h1>Choisissez votre accessoire !</h1>
+  <div class="props-list">
+    <div class="row">
+      <% @props.each do |prop| %>
+      <div class="col-4">
+        <div class="prop-card">
+          <img src="https://source.unsplash.com/random" alt="illustration">
+            <div class="prop-card-info">
+              <h2><%= prop.name %></h2>
+              <p><%= prop.description %></p>
+              <div class="prop-card-details">
+                <p><i class="fas fa-film"></i> <%= prop.movie.name %></p>
+                <p class="price"><%= prop.price %> <i class="fas fa-euro-sign"></i></p>
+                <button type="button" class="btn btn-outline-danger btn-sm">Louer</button>
+              </div>
+            </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

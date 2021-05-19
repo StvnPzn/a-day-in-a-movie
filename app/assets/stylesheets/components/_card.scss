@@ -1,0 +1,41 @@
+.prop-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 350px;
+  margin-bottom: 10px;
+}
+
+.prop-card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.prop-card-info {
+  padding: 16px;
+}
+
+.prop-card-info h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.prop-card-info p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 10px 0;
+}
+
+
+.prop-card .prop-card-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.fa-film {
+  transform: rotate(45deg);
+  font-size: 12px;
+}
