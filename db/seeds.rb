@@ -21,6 +21,12 @@ user2 = User.create!(email: "lisa@go.com", password: "azerty")
 user3 = User.create!(email: "steven@go.com", password: "azerty")
 puts "Done"
 
+puts "Creating 3 bookings"
+booking_1 = Booking.create(date: Date.today, status: 1, user: user1, prop: Prop.all.sample)
+booking_2 = Booking.create(date: Date.tomorrow, status: 0, user: user2, prop: Prop.all.sample)
+booking_3 = Booking.create(date: (Date.today + 15), status: 2, user: user1, prop: Prop.all.sample)
+puts "Done"
+
 puts "Creating 24 movies"
 star_wars = Movie.create!(name: "Star Wars")
 got = Movie.create!(name: "Game of thrones")
@@ -54,7 +60,7 @@ dark_vador = Prop.create!(category: "costume", name: "Tenue de Dark Vador", desc
 helmet_stormtrooper = Prop.create!(category: "accessoire", name: "Casque de Stormtrooper", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 60, movie: star_wars, user: user1)
 yoda = Prop.create!(category: "personnage", name: "Yoda", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 150, movie: star_wars, user: user1)
 r2d2 = Prop.create!(category: "personnage", name: "R2-D2", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 100, movie: star_wars, user: user1)
-throne = Prop.create!(category: "accessoire", name: "Trone de fer", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 130, movie: got, user: user1)
+throne = Prop.create!(category: "accessoire", name: "Trône de fer", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 130, movie: got, user: user1)
 ring_got = Prop.create!(category: "bijou", name: "Bague de Daenerys", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 80, movie: got, user: user1)
 manteau = Prop.create!(category: "costume", name: "Manteau de John Snow", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 40, movie: got, user: user1)
 white_walker = Prop.create!(category: "personnage", name: "White Walker", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 100, movie: got, user: user1)
