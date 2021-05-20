@@ -16,15 +16,9 @@ User.destroy_all
 Booking.destroy_all
 
 puts "Creating 3 users"
-user1 = User.create!(email: "flo@go.com", password: "azerty")
+user1 = User.create!(email: "flo@go.com", password: "azerty", producer: true)
 user2 = User.create!(email: "lisa@go.com", password: "azerty")
 user3 = User.create!(email: "steven@go.com", password: "azerty")
-puts "Done"
-
-puts "Creating 3 bookings"
-booking_1 = Booking.create(date: Date.today, status: 1, user: user1, prop: Prop.all.sample)
-booking_2 = Booking.create(date: Date.tomorrow, status: 0, user: user2, prop: Prop.all.sample)
-booking_3 = Booking.create(date: (Date.today + 15), status: 2, user: user1, prop: Prop.all.sample)
 puts "Done"
 
 puts "Creating 24 movies"
@@ -120,8 +114,11 @@ skull_indiana = Prop.create!(category: "bijou", name: 'Crâne de Cristal', descr
 moto_indiana = Prop.create!(category: "véhicule", name: 'Moto d\'Indiana Jones', description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 180, movie: indiana_jones, user: user3)
 puts "Done !!"
 
-
-
+puts "Creating 3 bookings"
+booking_1 = Booking.create!(date: Date.today, status: 1, user: user2, prop: Prop.where(name: "Sabre Laser de Maître Yoda").first)
+booking_2 = Booking.create(date: Date.tomorrow, status: 0, user: user2, prop: Prop.all.sample)
+booking_3 = Booking.create(date: (Date.today + 15), status: 2, user: user1, prop: Prop.all.sample)
+puts "Done"
 
 
 

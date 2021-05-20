@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :props
   has_many :bookings
+  has_many :reservations, through: :props, source: :bookings
 end

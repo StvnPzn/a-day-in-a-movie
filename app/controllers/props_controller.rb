@@ -17,23 +17,27 @@ class PropsController < ApplicationController
   end
 
   def create
-    # @prop = Prop.new(prop_params)
-    # @movie = Movie.find(params[:movie_id])
-    # @prop.movie = @movie
-    # if @prop.save
-    #   redirect_to props_path(@prop)
-    # else
-    #   render :new
-    # end
+    @prop = Prop.new(prop_params)
+    if @prop.save
+      redirect_to props_path(@prop)
+    else
+      render :new
+    end
   end
 
   def edit
+    @prop = Prop.find(params[:id])
   end
 
   def update
+    @prop = Prop.find(params[:id])
+    @prop = @prop.update(prop_params)
   end
 
   def destroy
+    @prop = Prop.find(params[:id])
+    @prop.destroy
+    redirect_to prop_path(@prop)
   end
 
   private

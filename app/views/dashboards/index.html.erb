@@ -1,0 +1,17 @@
+<h1>DASHBOARDS - INDEX PRODUCER</h1>
+<div class="first-banner">
+  <h2>Mes objets disponibles</h2>
+  <p><% @props.each do |prop| %>
+    <p> <%=prop.name %></p>
+    <% end %>
+  </p>
+</div>
+
+<div class="second-banner">
+  <h2>Mes objets en cours de location</h2>
+    <p><% @reservations.each do |reservation| %>
+      <p> <%= reservation.prop.name %>
+      </p>
+    <% end %>
+    </p>
+</div>
