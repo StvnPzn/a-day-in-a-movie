@@ -4,6 +4,7 @@
 <p><%= @prop.category %></p>
 <p><%= @prop.description %></p>
 <p><%= @prop.price %></p>
+<%= cl_image_tag @prop.photo.key, height: 300, width: 400, crop: :fill %>
 
 <%= simple_form_for [ @prop, @booking] do |f| %>
   <%= f.input :date %>

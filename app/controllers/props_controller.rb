@@ -6,6 +6,7 @@ class PropsController < ApplicationController
   def show
     @prop = Prop.find(params[:id])
     @booking = Booking.new
+    
   end
 
   def new
@@ -13,14 +14,14 @@ class PropsController < ApplicationController
   end
 
   def create
-    # @prop = Prop.new(prop_params)
-    # @movie = Movie.find(params[:movie_id])
-    # @prop.movie = @movie
-    # if @prop.save
-    #   redirect_to props_path(@prop)
-    # else
-    #   render :new
-    # end
+    @prop = Prop.new(prop_params)
+    @movie = Movie.find(params[:movie_id])
+    @prop.movie = @movie
+    if @prop.save
+      redirect_to props_path(@prop)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -34,7 +35,7 @@ class PropsController < ApplicationController
 
   private
   def prop_params
-    params.require(:prop).permit(:name, :category, :availability, :description, :price)
+    params.require(:prop).permit(:name, :category, :availability, :description, :price, :photo)
   end
 
 end
