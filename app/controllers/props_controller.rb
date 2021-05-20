@@ -42,7 +42,7 @@ class PropsController < ApplicationController
   def destroy
     @prop = Prop.find(params[:id])
     @prop.destroy
-    redirect_to prop_path(@prop)
+    redirect_to dashboards_path
   end
 
   private
