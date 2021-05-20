@@ -2,4 +2,5 @@
 
 <% @bookings.each do |booking| %> 
   <li><%= booking.date %> <%= booking.prop.name %> <%= booking.status %></li>
+   <%= cl_image_tag booking.prop.photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
