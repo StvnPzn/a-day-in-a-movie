@@ -4,6 +4,7 @@ class Prop < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
 
+
   # def photo
   #   @props = Prop.all
   #   @props.each do |prop| 
@@ -16,4 +17,5 @@ class Prop < ApplicationRecord
   #     end
   #   end
   # end
+
 end

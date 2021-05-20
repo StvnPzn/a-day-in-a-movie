@@ -1,0 +1,10 @@
+<h1>NEW PROP - Producer props creation</h1>
+<p>Vous pouvez proposer votre objet</p>
+<%= simple_form_for(@prop) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Mettre cet objet à la location"%>
+<% end %>
