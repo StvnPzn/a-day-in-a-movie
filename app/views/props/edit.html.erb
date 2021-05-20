@@ -1,0 +1,10 @@
+<h1>EDIT PROP - Producer props edition</h1>
+<p>Vous pouvez modifier les caractéristiques de votre objet</p>
+<%= simple_form_for(@prop) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Valider la modification"%>
+<% end %>

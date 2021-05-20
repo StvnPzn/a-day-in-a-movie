@@ -19,15 +19,9 @@ User.destroy_all
 Booking.destroy_all
 
 puts "Creating 3 users"
-user1 = User.create!(email: "flo@go.com", password: "azerty")
+user1 = User.create!(email: "flo@go.com", password: "azerty", producer: true)
 user2 = User.create!(email: "lisa@go.com", password: "azerty")
 user3 = User.create!(email: "steven@go.com", password: "azerty")
-puts "Done"
-
-puts "Creating 3 bookings"
-booking_1 = Booking.create(date: Date.today, status: 1, user: user1, prop: Prop.all.sample)
-booking_2 = Booking.create(date: Date.tomorrow, status: 0, user: user2, prop: Prop.all.sample)
-booking_3 = Booking.create(date: (Date.today + 15), status: 2, user: user1, prop: Prop.all.sample)
 puts "Done"
 
 puts "Creating 24 movies"
@@ -60,6 +54,7 @@ puts "Done"
 puts "Creating 63 props"
 sabre_laser = Prop.create!(category: "arme", name: "Sabre Laser de Maître Yoda", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 50, movie: star_wars, user: user1)
 sabre_laser.photo.attach(io: File.open('app/assets/images/yoda.jpg'), filename: 'yoda.jpg', content_type: 'image/jpg')
+
 
 dark_vador = Prop.create!(category: "costume", name: "Tenue de Dark Vador", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 100, movie: star_wars, user: user1)
 dark_vador.photo.attach(io: File.open('app/assets/images/dark-vador.jpg'), filename: 'dark-vador.jpg', content_type: 'image/jpg')
@@ -303,3 +298,9 @@ prop = Prop.create!(category: "vehicule", name: 'Moto d\'Indiana Jones', descrip
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 puts "Done !!"
+
+puts "Creating 3 bookings"
+booking_1 = Booking.create!(date: Date.today, status: 1, user: user2, prop: Prop.where(name: "Sabre Laser de Maître Yoda").first)
+booking_2 = Booking.create(date: Date.tomorrow, status: 0, user: user2, prop: Prop.all.sample)
+booking_3 = Booking.create(date: (Date.today + 15), status: 2, user: user1, prop: Prop.all.sample)
+puts "Done"

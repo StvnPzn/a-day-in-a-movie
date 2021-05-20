@@ -29,12 +29,18 @@ class PropsController < ApplicationController
   end
 
   def edit
+    @prop = Prop.find(params[:id])
   end
 
   def update
+    @prop = Prop.find(params[:id])
+    @prop = @prop.update(prop_params)
   end
 
   def destroy
+    @prop = Prop.find(params[:id])
+    @prop.destroy
+    redirect_to prop_path(@prop)
   end
 
   private

@@ -17,8 +17,10 @@ class BookingsController < ApplicationController
       redirect_to prop_path(params[:prop_id])
     end
   end
-  
-    # @booking.status = 
+
+  def update
+  end
+    # @booking.status =
 
 
       # créer un statut par défaut : pending
@@ -39,7 +41,7 @@ class BookingsController < ApplicationController
   # def check_availability
     #if existe un booking rattache a l'objet dont la date est = a la date de dde de resa
     # et que status == 1 (accepted) renvoit false
-  # end 
+  # end
   # end
 
   def date_format
