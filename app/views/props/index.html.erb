@@ -1,10 +1,25 @@
-<form class="form-inline">
-  <input class="form-control mr-2" type="search" placeholder="Exemple : star wars" aria-label="Search">
-  <button class="btn btn-outline-dark my-2" type="submit">Search</button>
-</form>
+<div class="search-container">
+  <h1>Choisissez votre accessoire !</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in finibus tellus. Pellentesque consectetur non metus at ornare. Integer nulla sapien, suscipit vel ipsum nec, fringilla dapibus nunc. Duis purus.</p>
+  <div class="search-bar">
+    <div><%= form_tag props_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a prop"
+      %></div>
+      <div><%= submit_tag "Search", class: "btn btn-outline-success ml-2" %></div>
+    <% end %>
+  </div>
+  <div class="btn-list-filter">
+    <%= link_to 'Véhicules', props_path(query: 'véhicule'), :class => "btn btn-outline-warning" %>
+    <%= link_to 'Bijoux', props_path(query: 'bijou'), :class => "btn btn-outline-secondary" %>
+    <%= link_to 'Harry Potter', props_path(query: 'harry potter'), :class => "btn btn-outline-info" %>
+    <%= link_to 'Armes', props_path(query: 'arme'), :class => "btn btn-outline-primary" %>
+  </div>
+</div>
 
 <div class="container">
-<h1>Choisissez votre accessoire !</h1>
   <div class="props-list">
     <div class="row">
       <% @props.each do |prop| %>
