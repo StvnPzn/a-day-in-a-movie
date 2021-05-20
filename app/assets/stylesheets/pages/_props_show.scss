@@ -1,0 +1,43 @@
+body {
+  background-color: white;
+  color: rgb(100, 100, 100);
+}
+
+.prop-title {
+  border-bottom: 1px solid rgba(150, 150, 150, .5);
+  display: flex;
+  justify-content: space-between;
+}
+
+.prop-infos {
+  display: flex;
+}
+
+.prop-image {
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.prop-infos-text {
+  padding: 50px 25px;
+}
+
+.prop-infos-text .icon {
+  color: rgba(100, 100, 100, .5);
+  font-size: 20px;
+}
+
+.lign-text {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.lign-text > p {
+  margin-left: 10px;
+}
+
+.lign-text-icon {
+  min-width: 24px;
+  display: flex;
+  justify-content: space-around;
+}
