@@ -10,22 +10,51 @@
 <h1>Découvrez les objets à louer</h1>
   <div class="props-list">
     <div class="row">
-      <% @props.each do |prop| %>
       <div class="col-4">
         <div class="prop-card">
-          <img src="https://source.unsplash.com/random" alt="illustration">
+          <%= cl_image_tag @prop1.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="prop-card-info">
-              <h2><%= prop.name %></h2>
-              <p><%= prop.description %></p>
+              <h2><%= @prop1.name %></h2>
+              <p><%= @prop1.description %></p>
               <div class="prop-card-details">
-                <p><i class="fas fa-film"></i> <%= prop.movie.name %></p>
-                <p class="price"><%= prop.price %> <i class="fas fa-euro-sign"></i></p>
-                <%= link_to "Louer", prop_path(prop), :class => "btn btn-outline-danger btn-sm" %>
+                <p><i class="fas fa-film"></i> <%= @prop1.movie.name %></p>
+                <p class="price"><%= @prop1.price %> <i class="fas fa-euro-sign"></i></p>
+                <%= link_to "Louer", prop_path(@prop1), :class => "btn btn-outline-danger btn-sm" %>
               </div>
             </div>
         </div>
       </div>
-      <% end %>
+
+      <div class="col-4">
+        <div class="prop-card">
+          <%= cl_image_tag @prop2.photo.key, height: 300, width: 400, crop: :fill %>
+            <div class="prop-card-info">
+              <h2><%= @prop2.name %></h2>
+              <p><%= @prop2.description %></p>
+              <div class="prop-card-details">
+                <p><i class="fas fa-film"></i> <%= @prop2.movie.name %></p>
+                <p class="price"><%= @prop2.price %> <i class="fas fa-euro-sign"></i></p>
+                <%= link_to "Louer", prop_path(@prop2), :class => "btn btn-outline-danger btn-sm" %>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="prop-card">
+            <%= cl_image_tag @prop3.photo.key, height: 300, width: 400, crop: :fill %>
+              <div class="prop-card-info">
+                <h2><%= @prop3.name %></h2>
+                <p><%= @prop3.description %></p>
+                <div class="prop-card-details">
+                  <p><i class="fas fa-film"></i> <%= @prop3.movie.name %></p>
+                  <p class="price"><%= @prop3.price %> <i class="fas fa-euro-sign"></i></p>
+                  <%= link_to "Louer", prop_path(@prop3), :class => "btn btn-outline-danger btn-sm" %>
+                </div>
+              </div>
+          </div>
+      </div>
+
     </div>
   </div>
 </div>
