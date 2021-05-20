@@ -1,10 +1,13 @@
-<h1>NEW PROP - Producer props creation</h1>
-<p>Vous pouvez proposer votre objet</p>
+<div class="container">
+<h1>Vous souhaitez proposer un objet à la location ?</h1>
+<p>Remplissez le formulaire ci-dessous en donnant le maximum de détails possibles.</p>
 <%= simple_form_for(@prop) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :category %>
+  <%= f.input :name, label: "Nom de l'objet" %>
+  <%= f.input :category, label: "Categorie" %>
+  <%= f.association :movie, label: "Film" %>
   <%= f.input :description %>
-  <%= f.input :price %>
+  <%= f.input :price, label: "Prix" %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit "Mettre cet objet à la location"%>
+  <%= f.submit "Mettre cet objet à la location", :class => "btn btn-outline-danger btn-sm"%>
 <% end %>
+</div>
