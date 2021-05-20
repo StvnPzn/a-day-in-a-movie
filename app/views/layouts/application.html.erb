@@ -15,6 +15,7 @@
 
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      
   <a class="navbar-brand" href="/">
   <div class="logo"></div>
     <!-- <img src="../../images/logo.png" /> -->
@@ -42,10 +43,35 @@
       </li>
     </ul>
   </div>
-</div>
 
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <%= yield %>
+
+  <% if notice %>
+    <div class="alert alert-info alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= notice %>
+    </div>
+  <% end %>
+  <% if alert %>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= alert %>
+    </div>
+  <% end %>
+    
+    <footer>
+      <div class="footer">
+        <div class="footer-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="footer-copyright">
+          This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
