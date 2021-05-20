@@ -10,6 +10,7 @@ class PropsController < ApplicationController
   def show
     @prop = Prop.find(params[:id])
     @booking = Booking.new
+    
   end
 
   def new
@@ -18,6 +19,8 @@ class PropsController < ApplicationController
 
   def create
     @prop = Prop.new(prop_params)
+    @movie = Movie.find(params[:movie_id])
+    @prop.movie = @movie
     if @prop.save
       redirect_to props_path(@prop)
     else
@@ -43,15 +46,15 @@ class PropsController < ApplicationController
   private
 
   def prop_params
-    params.require(:prop).permit(:name, :category, :availability, :description, :price)
+    params.require(:prop).permit(:name, :category, :availability, :description, :price, :photo)
   end
 
   def sql_query
     " \
-    props.name ILIKE :query \
-    OR props.description ILIKE :query \
-    OR props.category ILIKE :query \
-    OR movies.name ILIKE :query \
+    props.name @@ :query \
+    OR props.description @@ :query \
+    OR props.category @@ :query \
+    OR movies.name @@ :query \
     "
   end
 end
