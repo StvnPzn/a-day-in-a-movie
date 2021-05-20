@@ -44,10 +44,10 @@ class PropsController < ApplicationController
 
   def sql_query
     " \
-    props.name ILIKE :query \
-    OR props.description ILIKE :query \
-    OR props.category ILIKE :query \
-    OR movies.name ILIKE :query \
+    props.name @@ :query \
+    OR props.description @@ :query \
+    OR props.category @@ :query \
+    OR movies.name @@ :query \
     "
   end
 end
