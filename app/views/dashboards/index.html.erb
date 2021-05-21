@@ -1,53 +1,57 @@
 <div class="container">
-  <h1>SUIVI DES OBJETS</h1>
-  <p>Retrouvez ci-dessous le détail des commandes</p>
   <div class="first-banner">
-    <h2>Mes objets disponibles</h2>
-      <div class="props-list">
-          <div class="row">
-            <% @props.each do |prop| %>
-            <div class="col-4">
-              <div class="prop-card">
-                <img src="https://source.unsplash.com/random" alt="illustration">
-                  <div class="prop-card-info">
-                    <h2><%= prop.name %></h2>
-                    <p><%= prop.description %></p>
-                    <div class="prop-card-details">
-                      <p><i class="fas fa-film"></i> <%= prop.movie.name %></p>
-                      <p class="price"><%= prop.price %> <i class="fas fa-euro-sign"></i></p>
-                      <%= link_to "Supprimer cet objet", prop_path(prop), method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-outline-danger btn-sm" %>
-                      <%= link_to "Modifier cet objet", prop_path(prop), :class => "btn btn-outline-danger btn-sm" %>
+  <h1>SUIVI DES OBJETS</h1>
+    <p>Retrouvez ci-dessous le détail des commandes</p>
+    <div class="first-banner">
+      <h2>Mes objets disponibles</h2>
+        <div class="props-list">
+            <div class="row">
+              <% @props.each do |prop| %>
+              <div class="col-4">
+                <div class="prop-card">
+                  <%= cl_image_tag prop.photo.key, height: 300, width: 400, crop: :fill %>
+                    <div class="prop-card-info">
+                      <h2><%= prop.name %></h2>
+                      <p><%= prop.description %></p>
+                      <div class="prop-card-details">
+                        <p><i class="fas fa-film"></i> <%= prop.movie.name %></p>
+                        <%= link_to "Supprimer", prop_path(prop), method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-outline-danger btn-sm" %>
+                        <%= link_to "Modifier", prop_path(prop), :class => "btn btn-outline-danger btn-sm" %>
+                      </div>
                     </div>
-                  </div>
+                </div>
               </div>
-            </div>
-            <% end %>
-          </div>
-        </div>
-
-  <div class="second-banner">
-    <h2>Mes objets en cours de location</h2>
-    <div class="props-list">
-      <div class="row">
-      <p><% @reservations.each do |reservation| %>
-        <div class="col-4">
-              <div class="prop-card">
-                <img src="https://source.unsplash.com/random" alt="illustration">
-                  <div class="prop-card-info">
-                    <h2><%= reservation.prop.name %></h2>
-                    <p><%= reservation.prop.description %></p>
-                    <div class="prop-card-details">
-                      <p><i class="fas fa-film"></i> <%= reservation.prop.movie.name %></p>
-                      <p class="price"><%= reservation.prop.price %> <i class="fas fa-euro-sign"></i></p>
-                      <%= link_to "Modifier le statut", dashboards_path(status: 1), :class => "btn btn-outline-danger btn-sm" %>
-                    </div>
-                  </div>
-              </div>
-            </div>
             <% end %>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="second-banner">
+      <h2>Mes objets en cours de location</h2>
+      <div class="props-list">
+        <div class="row">
+        <p><% @reservations.each do |reservation| %>
+          <div class="col-4">
+                <div class="prop-card">
+                  <%= cl_image_tag reservation.prop.photo.key, height: 300, width: 400, crop: :fill %>
+                    <div class="prop-card-info">
+                      <h2><%= reservation.prop.name %></h2>
+                      <p><%= reservation.prop.description %></p>
+                      <div class="prop-card-details">
+                        <p><i class="fas fa-film"></i> <%= reservation.prop.movie.name %></p>
+                        <p class="price"><%= reservation.prop.price %> <i class="fas fa-euro-sign"></i></p>
+                        <%= link_to "Valider", dashboards_path(status: 1), :class => "btn btn-outline-danger btn-sm" %>
+                        <%= link_to "Refuser", dashboards_path(status: 2), :class => "btn btn-outline-danger btn-sm" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
 
 
 
