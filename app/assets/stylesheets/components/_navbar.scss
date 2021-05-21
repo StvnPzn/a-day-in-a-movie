@@ -1,23 +1,28 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #E63946;
+  background-color: #333333;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  padding: 15px;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 80px;
 }
 
 .nav-link {
   color: white;
 }
 
-// .nav-link:hover {
-//   color: white;
-//   background: #12190F;
-//   padding: 8px 24px;
-//   border-radius: 4px;
-// } => A vérifier
+.nav-link:hover {
+  background: rgba(245, 245, 245, 0.5);
+  padding: 8px 24px;
+  border-radius: 4px;
+  color: black;
+}
+
+.btn-nav {
+  padding: 8px 24px;
+}

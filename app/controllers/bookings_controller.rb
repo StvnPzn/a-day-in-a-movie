@@ -11,9 +11,8 @@ class BookingsController < ApplicationController
     @booking.pending!
     if available?
       @booking.save
-      redirect_to bookings_path
+      redirect_to bookings_path, alert: "Réservation envoyée !"
     else
-      puts "not working"
       redirect_to prop_path(params[:prop_id])
     end
   end
