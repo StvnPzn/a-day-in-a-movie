@@ -41,8 +41,8 @@
                       <div class="prop-card-details">
                         <p><i class="fas fa-film"></i> <%= reservation.prop.movie.name %></p>
                         <p class="price"><%= reservation.prop.price %> <i class="fas fa-euro-sign"></i></p>
-                        <%= link_to "Valider", dashboards_path(status: 1), :class => "btn btn-outline-danger btn-sm" %>
-                        <%= link_to "Refuser", dashboards_path(status: 2), :class => "btn btn-outline-danger btn-sm" %>
+                        <%= link_to "Valider", booking_path(reservation, booking: { status: "accepted" }), method: :patch, :class => "btn btn-outline-danger btn-sm" %>
+                        <%= link_to "Refuser", booking_path(reservation, booking: { status: "refusé" }), method: :patch, :class => "btn btn-outline-danger btn-sm" %>
                       </div>
                     </div>
                   </div>
