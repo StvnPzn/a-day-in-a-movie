@@ -151,7 +151,7 @@ file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
 prop = Prop.create!(category: "costume", name: "Costume Leeloo", description: "Avec sa tenue, vous devriez posséder les mêmes facultés qu'elle :)", price: 70, movie: cinquieme_element, user: user1)
-file = URI.open("https://source.unsplash.com/random/#{prop.category}")
+file = URI.open("https://medias.spotern.com/spots/w1280/156/156955-1533591606.jpg")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
 prop = Prop.create!(category: "accessoire", name: "Arc d'Avatar", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 180, movie: avatar, user: user2)
