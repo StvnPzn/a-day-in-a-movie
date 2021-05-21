@@ -1,35 +1,31 @@
 <div class="container">
-    <%= link_to "▷ Je propose un objet", new_prop_path, class: "btn btn-danger my-4" %>
+  <%= link_to "▷ Je propose un objet", new_prop_path, class: "btn btn-danger my-4" %>
   <div class="first-banner">
-  <h1>SUIVI DES OBJETS</h1>
-    <p>Retrouvez ci-dessous le détail des commandes</p>
-    <div class="first-banner">
-      <h2>Tous mes objets</h2>
-        <div class="props-list">
-            <div class="row">
-              <% @props.each do |prop| %>
-              <div class="col-4">
-                <div class="prop-card">
-                  <%= cl_image_tag prop.photo.key, height: 300, width: 400, crop: :fill %>
-                    <div class="prop-card-info">
-                      <h2><%= prop.name %></h2>
-                      <p><%= prop.description %></p>
-                      <div class="prop-card-details">
-                        <p><i class="fas fa-film"></i> <%= prop.movie.name %></p>
-                        <%= link_to "Supprimer", prop_path(prop), method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-outline-danger btn-sm" %>
-                        <%= link_to "Modifier", edit_prop_path(prop), :class => "btn btn-outline-secondary btn-sm" %>
-                      </div>
+    <h2 class="mb-4">Tous mes objets</h2>
+      <div class="props-list">
+          <div class="row">
+            <% @props.each do |prop| %>
+            <div class="col-4">
+              <div class="prop-card">
+                <%= cl_image_tag prop.photo.key, height: 300, width: 400, crop: :fill %>
+                  <div class="prop-card-info">
+                    <h2><%= prop.name %></h2>
+                    <p><%= prop.description %></p>
+                    <div class="prop-card-details">
+                      <p><i class="fas fa-film"></i> <%= prop.movie.name %></p>
+                      <%= link_to "Supprimer", prop_path(prop), method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-outline-danger btn-sm" %>
+                      <%= link_to "Modifier", edit_prop_path(prop), :class => "btn btn-outline-secondary btn-sm" %>
                     </div>
-                </div>
+                  </div>
               </div>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
 
     <div class="second-banner">
-      <h2>Mes demandes de location</h2>
+      <h2 class="my-5">Mes demandes de location</h2>
       <div class="props-list">
         <div class="row">
         <p><% @reservations.each do |reservation| %>
@@ -43,7 +39,7 @@
                         <p><i class="fas fa-film"></i> <%= reservation.prop.movie.name %></p>
                         <p class="price"><%= reservation.prop.price %> <i class="fas fa-euro-sign"></i></p>
                         <%= link_to "Valider", booking_path(reservation, booking: { status: "accepted" }), method: :patch, :class => "btn btn-outline-success btn-sm" %>
-                        <%= link_to "Refuser", booking_path(reservation, booking: { status: "refusé" }), method: :patch, :class => "btn btn-outline-danger btn-sm" %>
+                        <%= link_to "Refuser", booking_path(reservation, booking: { status: "refused" }), method: :patch, :class => "btn btn-outline-danger btn-sm" %>
                       </div>
                     </div>
                   </div>

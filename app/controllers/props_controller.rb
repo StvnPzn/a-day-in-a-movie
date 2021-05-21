@@ -37,6 +37,7 @@ class PropsController < ApplicationController
   def update
     @prop = Prop.find(params[:id])
     @prop = @prop.update(prop_params)
+    redirect_to dashboards_path
   end
 
   def destroy
