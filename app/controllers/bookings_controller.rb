@@ -8,7 +8,6 @@ class BookingsController < ApplicationController
     @booking.date = date_format
     @booking.user_id = current_user.id
     @booking.prop_id = params[:prop_id]
-    @booking.pending!
     if available?
       @booking.save
       redirect_to bookings_path, alert: "Réservation envoyée !"
