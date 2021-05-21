@@ -20,6 +20,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
+    redirect_to dashboards_path
   end
 
   private
@@ -32,7 +33,6 @@ class BookingsController < ApplicationController
   end
 
   def available?
-     Booking.where(["date = ? and status = ? and prop_id = ?", "#{@booking.date}", 1, "#{params[:prop_id]}"]).empty?
+    Booking.where(["date = ? and status = ? and prop_id = ?", "#{@booking.date}", 1, "#{params[:prop_id]}"]).empty?
   end
-
 end
