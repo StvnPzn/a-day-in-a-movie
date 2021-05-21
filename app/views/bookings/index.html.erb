@@ -1,6 +1,16 @@
+<div class="container">
 <h1>Mes reservations</h1>
-
-<% @bookings.each do |booking| %> 
-  <li><%= booking.date %> <%= booking.prop.name %> <%= booking.status %></li>
-   <%= cl_image_tag booking.prop.photo.key, height: 300, width: 400, crop: :fill %>
+  <% @bookings.each do |booking| %> 
+    <div class="card-product">
+      <div><%= cl_image_tag booking.prop.photo.key, height: 300, width: 400, crop: :fill, class: "card-product-img" %></div>
+      <div class="card-product-infos">
+        <h2><%= booking.prop.name %></h2>
+        <p>Description: <%= booking.prop.description %></p>
+        <p>Date: <%= booking.date %></p>
+        <p>Status: <%= booking.status %></p>
+      </div>
+    </div>
   <% end %>
+</div>
+
+

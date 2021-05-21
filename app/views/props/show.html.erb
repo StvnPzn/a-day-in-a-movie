@@ -1,22 +1,23 @@
-
-<div class="container mt-2">
-  <div class="prop-title">
-    <h1><%= @prop.name %></h1>
-    <%= link_to "Retour", props_path, :class => "btn btn-outline-danger btn-sm mb-3 mt-2" %>
-  </div>
-  <div class="prop-infos">
-    <div>
-      <%= cl_image_tag @prop.photo.key, height: 400, width: 500, crop: :fill, :class => 'prop-image' %>
+<div class="registration-container">
+  <div class="container mt-2">
+    <div class="prop-title">
+      <h1><%= @prop.name %></h1>
+      <%= link_to "Retour", props_path, :class => "btn btn-outline-danger btn-sm mb-3 mt-2" %>
     </div>
-    <div class="prop-infos-text">
-      <div class="lign-text"><div class="lign-text-icon"><i class="fas fa-film movie-name icon"></i></div><p><%= @prop.movie.name %></p></div>
-      <div class="lign-text"><div class="lign-text-icon"><i class="far fa-bookmark icon"></i></div><p><%= @prop.category.capitalize %></p></div>
-      <div class="lign-text"><div class="lign-text-icon"><i class="fas fa-info icon"></i></div><p><%= @prop.description %></p></div>
-      <div class="lign-text"><div class="lign-text-icon"><i class="fas fa-tag icon"></i></div><p><%= @prop.price %>€</p></div>
-      <%= simple_form_for [ @prop, @booking] do |f| %>
-        <%= f.input :date, label: 'Date de réservation :' %>
-        <%= f.submit "Je réserve !", class: "btn btn-primary mt-2" %>
-      <% end %>
+    <div class="prop-infos">
+      <div>
+        <%= cl_image_tag @prop.photo.key, height: 400, width: 500, crop: :fill, :class => 'prop-image' %>
+      </div>
+      <div class="prop-infos-text">
+        <div class="lign-text"><div class="lign-text-icon"><i class="fas fa-film movie-name icon"></i></div><p><%= @prop.movie.name %></p></div>
+        <div class="lign-text"><div class="lign-text-icon"><i class="far fa-bookmark icon"></i></div><p><%= @prop.category.capitalize %></p></div>
+        <div class="lign-text"><div class="lign-text-icon"><i class="fas fa-info icon"></i></div><p><%= @prop.description %></p></div>
+        <div class="lign-text"><div class="lign-text-icon"><i class="fas fa-tag icon"></i></div><p><%= @prop.price %>€</p></div>
+        <%= simple_form_for [ @prop, @booking] do |f| %>
+          <%= f.input :date, label: 'Date de réservation :' %>
+          <%= f.submit "Je réserve !", class: "btn btn-primary mt-2" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
