@@ -52,54 +52,54 @@ james_bond = Movie.create!(name: "James Bond")
 puts "Done"
 
 puts "Creating 63 props"
-sabre_laser = Prop.create!(category: "arme", name: "Sabre Laser de Maître Yoda", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 50, movie: star_wars, user: user1)
+sabre_laser = Prop.create!(category: "arme", name: "Sabre Laser de Maître Yoda", description: "Avec ce sabre, maîtriser la force le temps d'une journée vous devrez !", price: 50, movie: star_wars, user: user1)
 sabre_laser.photo.attach(io: File.open('app/assets/images/yoda.jpg'), filename: 'yoda.jpg', content_type: 'image/jpg')
 
 
-dark_vador = Prop.create!(category: "costume", name: "Tenue de Dark Vador", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 100, movie: star_wars, user: user1)
+dark_vador = Prop.create!(category: "costume", name: "Tenue de Dark Vador", description: "Entrez dans la peau de l'Empereur le temps d'une journée (idéal pour les courses)", price: 100, movie: star_wars, user: user1)
 dark_vador.photo.attach(io: File.open('app/assets/images/dark-vador.jpg'), filename: 'dark-vador.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "accessoire", name: "Casque de Stormtrooper", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 60, movie: star_wars, user: user1)
+prop = Prop.create!(category: "accessoire", name: "Casque de Stormtrooper", description: "Partez à la conquête de votre voisinage dans cette parfaite tenue de soldat impérial !", price: 60, movie: star_wars, user: user1)
+file = URI.open("https://static.hitek.fr/img/actualite/ill_m/52657938/maxresdefault.webp")
+prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
+
+prop = Prop.create!(category: "personnage", name: "Yoda", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 150, movie: star_wars, user: user2)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "personnage", name: "Yoda", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 150, movie: star_wars, user: user1)
+prop = Prop.create!(category: "personnage", name: "R2-D2", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 100, movie: star_wars, user: user3)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "personnage", name: "R2-D2", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 100, movie: star_wars, user: user1)
+prop = Prop.create!(category: "accessoire", name: "Trône de fer", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 130, movie: got, user: user3)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "accessoire", name: "Trône de fer", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 130, movie: got, user: user1)
+prop = Prop.create!(category: "bijou", name: "Bague de Daenerys", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 80, movie: got, user: user3)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "bijou", name: "Bague de Daenerys", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 80, movie: got, user: user1)
+prop = Prop.create!(category: "costume", name: "Manteau de John Snow", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 40, movie: got, user: user3)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "costume", name: "Manteau de John Snow", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 40, movie: got, user: user1)
+prop = Prop.create!(category: "personnage", name: "White Walker", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 100, movie: got, user: user3)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "personnage", name: "White Walker", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 100, movie: got, user: user1)
+prop = Prop.create!(category: "accessoire", name: "Machine à écrire", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 50, movie: shinning, user: user3)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "accessoire", name: "Machine à écrire", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 50, movie: shinning, user: user1)
+prop = Prop.create!(category: "accessoire", name: "Baguette d'Harry Potter", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 60, movie: harry_potter, user: user3)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "accessoire", name: "Baguette d'Harry Potter", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 60, movie: harry_potter, user: user1)
+prop = Prop.create!(category: "vehicule", name: "Balai d'Harry Potter", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 80, movie: harry_potter, user: user3)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "vehicule", name: "Balai d'Harry Potter", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 80, movie: harry_potter, user: user1)
-file = URI.open("https://source.unsplash.com/random/#{prop.category}")
-prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
-
-prop = Prop.create!(category: "accessoire", name: "Vif d'or d'Harry Potter", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 90, movie: harry_potter, user: user1)
+prop = Prop.create!(category: "accessoire", name: "Vif d'or d'Harry Potter", description: "Entrez dans le monde magique d’Harry Potter avec l’emblématique vif d’or des matchs de Quidditch !", price: 90, movie: harry_potter, user: user1)
 prop.photo.attach(io: File.open('app/assets/images/vif.jpg'), filename: 'vif.jpg', content_type: 'image/jpg')
 
 prop = Prop.create!(category: "accessoire", name: "Chapeau d'Harry Potter", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 20, movie: harry_potter, user: user2)
@@ -115,14 +115,14 @@ file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
 
-overboard = Prop.create!(category: "accessoire", name: "Overboard de Marty McFly", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 90, movie: retour_futur, user: user2)
+overboard = Prop.create!(category: "accessoire", name: "Overboard de Marty McFly", description: "Baladez-vous le temps d'une journée où que vous soyez. Attention à sa vitesse de pointe à 18km/h !", price: 90, movie: retour_futur, user: user1)
 overboard.photo.attach(io: File.open('app/assets/images/skate.jpg'), filename: 'skate.jpg', content_type: 'image/jpg')
 
 prop = Prop.create!(category: "accessoire", name: "Guitare de Marty McFly", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 70, movie: retour_futur, user: user2)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "vehicule", name: "Dolorean", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 200, movie: retour_futur, user: user2)
+prop = Prop.create!(category: "vehicule", name: "DeLorean", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 200, movie: retour_futur, user: user2)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
@@ -130,7 +130,7 @@ prop = Prop.create!(category: "arme", name: "Gun de James Bond", description: "L
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "vehicule", name: "Aston Martin DB5 de James Bond", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 400, movie: james_bond, user: user2)
+prop = Prop.create!(category: "vehicule", name: "Aston Martin DB5 de James Bond", description: "Profitez de cette icône automobile pour votre sortie du dimanche !", price: 400, movie: james_bond, user: user2)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
@@ -150,7 +150,7 @@ prop = Prop.create!(category: "vehicule", name: "Jeep Wrangler de Jurassic Park"
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "costume", name: "Costume Leeloo", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 70, movie: cinquieme_element, user: user2)
+prop = Prop.create!(category: "costume", name: "Costume Leeloo", description: "Avec sa tenue, vous devriez posséder les mêmes facultés qu'elle :)", price: 70, movie: cinquieme_element, user: user1)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
@@ -186,7 +186,7 @@ prop = Prop.create!(category: "arme", name: "Sabre de Jack Sparrow", description
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-radeau = Prop.create!(category: "vehicule", name: "Radeau de Rose et un peu de Jack", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 80, movie: titanic, user: user2)
+radeau = Prop.create!(category: "vehicule", name: "Radeau de Rose et un peu de Jack", description: "Le fameux radeau de Rose rien que pour vous, idéal pour l'été et votre balade en mer ! ", price: 80, movie: titanic, user: user2)
 radeau.photo.attach(io: File.open('app/assets/images/titanic.jpg'), filename: 'titanic.jpg', content_type: 'image/jpg')
 
 prop = Prop.create!(category: "costume", name: "Costume de Thomas Shelby", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 1200, movie: peaky_blinders, user: user2)
@@ -201,7 +201,7 @@ prop = Prop.create!(category: "costume", name: "Masque et combinaison de Zombie"
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "arme", name: "Batte de Nega", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 30, movie: walking_dead, user: user2)
+prop = Prop.create!(category: "arme", name: "Batte de Negan", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 30, movie: walking_dead, user: user2)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
@@ -278,7 +278,7 @@ prop = Prop.create!(category: "arme", name: 'Winchester de Terminator', descript
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
-prop = Prop.create!(category: "arme", name: 'Bras robotisée de Terminator', description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempus tellus, vel dignissim metus.", price: 40, movie: terminator, user: user3)
+prop = Prop.create!(category: "arme", name: 'Bras robotisée de Terminator', description: "Vous n'imaginez même pas de quoi ce bras est capable ...", price: 40, movie: terminator, user: user3)
 file = URI.open("https://source.unsplash.com/random/#{prop.category}")
 prop.photo.attach(io: File.open(file), filename: 'random.jpg', content_type: 'image/jpg')
 
@@ -301,6 +301,6 @@ puts "Done !!"
 
 puts "Creating 3 bookings"
 booking_1 = Booking.create!(date: Date.today, status: 1, user: user2, prop: Prop.where(name: "Sabre Laser de Maître Yoda").first)
-booking_2 = Booking.create(date: Date.tomorrow, status: 0, user: user2, prop: Prop.all.sample)
-booking_3 = Booking.create(date: (Date.today + 15), status: 2, user: user1, prop: Prop.all.sample)
+booking_2 = Booking.create(date: Date.tomorrow, status: 0, user: user2, prop: Prop.where(name: "Costume Leeloo").first)
+booking_3 = Booking.create(date: (Date.today + 15), status: 2, user: user1, prop: Prop.where(name: "Casque de Stormtrooper").first)
 puts "Done"
