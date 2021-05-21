@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
       @booking.save
       redirect_to bookings_path, alert: "Réservation envoyée !"
     else
-      redirect_to prop_path(params[:prop_id])
+      redirect_to prop_path(params[:prop_id]), alert: "Produit déjà réservé pour cette date !"
     end
   end
 
