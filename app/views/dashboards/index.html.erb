@@ -15,8 +15,8 @@
                     <div class="prop-card-details">
                       <p><i class="fas fa-film"></i> <%= prop.movie.name %></p>
                       <p class="price"><%= prop.price %> <i class="fas fa-euro-sign"></i></p>
-                      <%= link_to "Supprimer cet objet", props_path(prop), method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-outline-danger btn-sm" %>
-                      <%= link_to "Modifier cet objet", props_path(prop), :class => "btn btn-outline-danger btn-sm" %>
+                      <%= link_to "Supprimer cet objet", prop_path(prop), method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-outline-danger btn-sm" %>
+                      <%= link_to "Modifier cet objet", prop_path(prop), :class => "btn btn-outline-danger btn-sm" %>
                     </div>
                   </div>
               </div>
@@ -39,6 +39,7 @@
                     <div class="prop-card-details">
                       <p><i class="fas fa-film"></i> <%= reservation.prop.movie.name %></p>
                       <p class="price"><%= reservation.prop.price %> <i class="fas fa-euro-sign"></i></p>
+                      <%= link_to "Modifier le statut", dashboards_path(status: 1), :class => "btn btn-outline-danger btn-sm" %>
                     </div>
                   </div>
               </div>
@@ -46,6 +47,7 @@
             <% end %>
           </div>
         </div>
+      </div>
 
 
 

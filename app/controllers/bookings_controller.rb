@@ -19,6 +19,9 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking = Booking.find(params[:id])
+    @status =
+    @booking.update(booking_params)
   end
     # @booking.status =
 
