@@ -1,7 +1,7 @@
 <div class="container">
-<h1>Mes reservations</h1>
-  <% @bookings.each do |booking| %> 
-    <div class="card-product">
+<h1 class="my-4">Mes réservations</h1>
+  <% @bookings.each do |booking| %>
+    <div class="card-product mb-3">
       <div><%= cl_image_tag booking.prop.photo.key, height: 300, width: 400, crop: :fill, class: "card-product-img" %></div>
       <div class="card-product-infos">
         <h2><%= booking.prop.name %></h2>
